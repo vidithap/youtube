@@ -245,3 +245,46 @@ body{
     margin: 2px 0;
     color: #979797;
 }
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding: 0 10px;
+    }
+    .search-box {
+        width: 60%;
+    }
+    .user-options {
+        display: flex;
+        align-items: center;
+    }
+    .side-bar {
+        position: fixed;
+        left: -250px;
+        transition: left 0.3s ease;
+    }
+    .side-bar.active {
+        left: 0;
+    }
+    .filters {
+        left: 0;
+        width: 100%;
+    }
+    .video-container {
+        width: 100%;
+        margin-left: 0;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .toggle-btn {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .search-box {
+        display: none;
+    }
+    .video-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+

@@ -1,4 +1,6 @@
 const videoCardContainer = document.querySelector('.video-container');
+const toggleBtn = document.querySelector('.toggle-btn');
+const sidebar = document.querySelector('.side-bar');
 
 let api_key = "AIzaSyCXJy_UnhxJpt6PEgLB_Cyd0ahA4FF7tek";
 let video_http = "https://www.googleapis.com/youtube/v3/videos?";
@@ -47,8 +49,7 @@ const makeVideoCard = (data) => {
     `;
 }
 
-// search bar
-
+// Search functionality
 const searchInput = document.querySelector('.search-bar');
 const searchBtn = document.querySelector('.search-btn');
 let searchLink = "https://www.youtube.com/results?search_query=";
@@ -57,5 +58,11 @@ searchBtn.addEventListener('click', () => {
     if(searchInput.value.length){
         location.href = searchLink + searchInput.value;
     }
-})
+});
 
+// Sidebar toggle functionality
+if (toggleBtn && sidebar) {
+    toggleBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('active');
+    });
+}
